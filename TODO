@@ -1,12 +1,4 @@
-
-
-render listing data
-
-create bids
-
-accept bids and create chats
-
-create chat
+onAccept -> create chat ->
 
 schedule logic for cleaner and owner
 

@@ -127,6 +127,8 @@ model Listing {
   jobType        String
   contractorType String
   readyToHire    Boolean
+  startDate      DateTime
+  endDate        DateTime
   title          String
   description    String
   budget         Int

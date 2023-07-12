@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -10,12 +10,16 @@ import {
 } from "@chakra-ui/react";
 import Header from "~/components/header";
 import { api } from "~/utils/api";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 type Listing = {
   propertyId: string;
   jobType: string;
   contractorType: string;
   readyToHire: boolean;
+  startDate: Date;
+  endDate: Date;
   title: string;
   description: string;
   budget: number;
@@ -35,6 +39,8 @@ export default function AddListing() {
     jobType: "",
     contractorType: "",
     readyToHire: true,
+    startDate: new Date(),
+    endDate: new Date(),
     title: "",
     description: "",
     budget: 0,
@@ -64,6 +70,20 @@ export default function AddListing() {
         [name]: value,
       }));
     }
+  };
+
+  const handleStartDateChange = (date: Date) => {
+    setListing((prevListing) => ({
+      ...prevListing,
+      startDate: date,
+    }));
+  };
+
+  const handleEndDateChange = (date: Date) => {
+    setListing((prevListing) => ({
+      ...prevListing,
+      endDate: date,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -120,6 +140,18 @@ export default function AddListing() {
                 placeholder="Contractor Type"
               />
 
+              <DatePicker
+                selected={listing.startDate}
+                onChange={handleStartDateChange}
+                placeholderText="Start Date"
+              />
+
+              <DatePicker
+                selected={listing.endDate}
+                onChange={handleEndDateChange}
+                placeholderText="End Date"
+              />
+
               <Input
                 name="title"
                 value={listing.title}
@@ -151,4 +183,5 @@ export default function AddListing() {
     </Header>
   );
 }
+
 

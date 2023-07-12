@@ -48,7 +48,7 @@ export default function AddProperty() {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    if (name === "Zip") {
+    if (name === "Zip" || name === "Beds" || name === "Baths" || name === "Sqft") {
       setProperty((prevProperty) => ({
         ...prevProperty,
         [name]: parseInt(value, 10),
