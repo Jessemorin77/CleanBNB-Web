@@ -49,7 +49,7 @@ export default function Marketplace() {
               role="group"
               transition="background 0.3s"
             >
-              <Heading fontSize="xl">{listing.Address}</Heading>
+              <Heading fontSize="xl">{listing.Title}</Heading>
               <Text fontSize="md" fontWeight="medium">
                 {listing.City}, {listing.State}
               </Text>

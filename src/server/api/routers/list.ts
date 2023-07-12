@@ -24,7 +24,7 @@ export const listRouter = createTRPCRouter({
         jobType: z.string(),
         contractorType: z.string(),
         readyToHire: z.boolean(),
-        startData: z.date(),
+        startDate: z.date(),
         endDate: z.date(),
         budget: z.number(), // changed from string to number
         title: z.string(),
