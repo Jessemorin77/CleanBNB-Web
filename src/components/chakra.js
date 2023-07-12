@@ -1,4 +1,4 @@
-import {
+/*import {
   ChakraProvider,
   cookieStorageManagerSSR,
   localStorageManager,
@@ -24,3 +24,4 @@ export async function getServerSideProps({ req }) {
     },
   };
 }
+*/
