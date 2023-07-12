@@ -12,8 +12,9 @@ export default function Home() {
   return (
     <>
       <div>
-        <Header />
-        <Hero />
+       <Header>
+          <Hero />
+        </Header> 
         <Footer />
       </div>
     </>
